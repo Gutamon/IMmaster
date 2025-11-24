@@ -1,0 +1,229 @@
+import React, { useState } from 'react';
+import { 
+  Factory, 
+  BarChart3, 
+  Search, 
+  Lightbulb, 
+  Cpu, 
+  TrendingUp, 
+  ClipboardCheck, 
+  Database,
+  ArrowRight,
+  Target
+} from 'lucide-react';
+
+const InternshipDashboard = () => {
+  const [activeTab, setActiveTab] = useState('overview');
+
+  const competencies = [
+    { title: "資訊整合", desc: "收集、整理與解釋數據", icon: <Database className="w-5 h-5 text-blue-500" /> },
+    { title: "報表優化", desc: "製作並改善生產報表", icon: <BarChart3 className="w-5 h-5 text-purple-500" /> },
+    { title: "產線稽核", desc: "維持產線紀律與運作", icon: <ClipboardCheck className="w-5 h-5 text-emerald-500" /> },
+    { title: "機台知識", desc: "熟悉測試機台運作原理", icon: <Cpu className="w-5 h-5 text-orange-500" /> },
+  ];
+
+  const workflow = [
+    { 
+      step: 1, 
+      title: "熟悉與學習", 
+      desc: "深入了解產線運作與機台特性，建立基礎知識庫。",
+      color: "bg-blue-100 border-blue-300 text-blue-800"
+    },
+    { 
+      step: 2, 
+      title: "維持與稽核", 
+      desc: "執行日常稽核工作，確保生產標準作業程序落實。",
+      color: "bg-indigo-100 border-indigo-300 text-indigo-800"
+    },
+    { 
+      step: 3, 
+      title: "分析與發現", 
+      desc: "運用數據分析能力，在稽核中主動識別潛在問題。",
+      color: "bg-purple-100 border-purple-300 text-purple-800"
+    },
+    { 
+      step: 4, 
+      title: "優化與建議", 
+      desc: "提出具體改善方案，提升整體生產效能。",
+      color: "bg-rose-100 border-rose-300 text-rose-800"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-slate-800">
+      <div className="max-w-5xl mx-auto space-y-6">
+        
+        {/* Header Section */}
+        <header className="bg-white rounded-2xl shadow-sm p-6 md:p-8 border-l-8 border-blue-600 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <div className="flex items-center gap-2 text-sm font-bold text-blue-600 tracking-wider uppercase mb-1">
+              <Factory className="w-4 h-4" /> Ardentec 欣銓科技
+            </div>
+            <h1 className="text-3xl font-extrabold text-slate-900 mb-2">生產製造部 實習歷程</h1>
+            <p className="text-slate-500 flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              2025.07.08 - Present
+            </p>
+          </div>
+          <div className="bg-slate-100 rounded-lg p-3 px-5 text-center min-w-[150px]">
+            <p className="text-xs text-slate-500 uppercase font-semibold">核心職責</p>
+            <p className="text-lg font-bold text-blue-700">生產效率控管</p>
+          </div>
+        </header>
+
+        {/* Navigation Tabs (Mobile friendly) */}
+        <div className="flex overflow-x-auto gap-2 pb-2 md:pb-0">
+          {['overview', 'process', 'impact'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap ${
+                activeTab === tab 
+                  ? 'bg-slate-800 text-white shadow-md' 
+                  : 'bg-white text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              {tab === 'overview' && '核心能力結構'}
+              {tab === 'process' && '工作循環流程'}
+              {tab === 'impact' && '實習收穫與價值'}
+            </button>
+          ))}
+        </div>
+
+        {/* Content Area */}
+        <main className="transition-all duration-300 ease-in-out">
+          
+          {/* VIEW 1: OVERVIEW - SKILLS */}
+          {activeTab === 'overview' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Left: Role Description */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                  <Target className="w-6 h-6 text-red-500" />
+                  職務定位分析
+                </h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  此職務位於生產管理的核心樞紐，不僅需要對<span className="font-bold text-slate-900">產線運作</span>有宏觀的理解，更需具備微觀的<span className="font-bold text-slate-900">數據洞察力</span>。
+                  工作本質是透過稽核與分析，將數據轉化為具體的生產力提升行動。
+                </p>
+                <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <h4 className="font-bold text-blue-800 mb-2 text-sm">關鍵字標籤</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['生產效率', '數據分析', '流程優化', '稽核管理', '半導體測試'].map(tag => (
+                      <span key={tag} className="bg-white text-blue-600 px-3 py-1 rounded-md text-xs font-bold shadow-sm border border-blue-100">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Competency Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {competencies.map((skill, idx) => (
+                  <div key={idx} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
+                    <div className="mb-3 p-3 bg-slate-50 rounded-full w-fit group-hover:bg-slate-100 transition-colors">
+                      {skill.icon}
+                    </div>
+                    <h4 className="font-bold text-slate-800 mb-1">{skill.title}</h4>
+                    <p className="text-xs text-slate-500">{skill.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* VIEW 2: PROCESS - WORKFLOW */}
+          {activeTab === 'process' && (
+            <div className="bg-white rounded-2xl shadow-sm p-6 md:p-10">
+              <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-blue-600" />
+                PDCA 優化循環路徑
+              </h3>
+              <div className="relative">
+                {/* Connecting Line (Desktop) */}
+                <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 z-0"></div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
+                  {workflow.map((item, idx) => (
+                    <div key={idx} className="group relative">
+                      <div className={`bg-white border-2 p-6 rounded-xl h-full transition-transform hover:-translate-y-1 hover:shadow-lg ${item.color.replace('text-', 'border-').split(' ')[1]}`}>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mb-4 ${item.color}`}>
+                          {item.step}
+                        </div>
+                        <h4 className="font-bold text-lg mb-2 text-slate-800">{item.title}</h4>
+                        <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                      {/* Arrow for mobile */}
+                      {idx !== 3 && (
+                        <div className="md:hidden flex justify-center py-2">
+                          <ArrowRight className="text-slate-300" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* VIEW 3: IMPACT - OUTCOME */}
+          {activeTab === 'impact' && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="md:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                    <Lightbulb className="w-6 h-6 text-yellow-400" />
+                    專業成長總結
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed text-lg mb-6">
+                    「透過本次實習，我不僅掌握了報表製作與數據分析的硬實力，更重要的是培養了<span className="text-white font-bold border-b border-yellow-400">主動發現問題</span>的敏銳度。」
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 bg-white/10 p-1 rounded">
+                        <Cpu className="w-4 h-4 text-blue-300" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-blue-200">產業視野</h5>
+                        <p className="text-sm text-slate-400">對半導體測試產業運作模式有全面且深入的了解。</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 bg-white/10 p-1 rounded">
+                        <Factory className="w-4 h-4 text-emerald-300" />
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-emerald-200">管理思維</h5>
+                        <p className="text-sm text-slate-400">從執行面上升至管理面，理解如何透過機制提升效能。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Decorative background element */}
+                <Cpu className="absolute -bottom-10 -right-10 w-64 h-64 text-white/5 rotate-12" />
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-sm p-6 flex flex-col justify-center items-center text-center border border-slate-100">
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                  <Search className="w-8 h-8 text-blue-600" />
+                </div>
+                <h4 className="text-lg font-bold text-slate-800 mb-2">主動稽核精神</h4>
+                <p className="text-sm text-slate-500 mb-6">
+                  不只是被動接收指令，而是在每次稽核中思考：「這個流程還可以如何更好？」
+                </p>
+                <div className="w-full bg-slate-100 rounded-full h-2 mb-2 overflow-hidden">
+                  <div className="bg-blue-600 h-full w-3/4 rounded-full"></div>
+                </div>
+                <span className="text-xs font-bold text-blue-600 self-end">持續精進中</span>
+              </div>
+            </div>
+          )}
+
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default InternshipDashboard;
