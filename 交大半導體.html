@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國際半導體產業學院 - 碩士研究規劃 Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FAFAFA;
+            color: #333;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        
+        /* Timeline line fix */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            bottom: 0;
+            left: 30px;
+            width: 4px;
+            background-color: #1E3A8A; /* NYCU Blue-ish */
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Custom Colors based on Semiconductor/Tech theme */
+        .text-accent { color: #1E40AF; } /* Dark Blue */
+        .bg-accent { background-color: #1E40AF; }
+        .border-accent { border-color: #1E40AF; }
+        
+        /* Chart Colors */
+        .bar-color-1 { background-color: #1E3A8A; } /* Dark Blue - Core Hardware */
+        .bar-color-2 { background-color: #3B82F6; } /* Blue - AI/Software */
+        .bar-color-3 { background-color: #60A5FA; } /* Light Blue - Simulation */
+        .bar-color-4 { background-color: #93C5FD; } /* Pale Blue - Data */
+        .bar-color-5 { background-color: #BFDBFE; } /* Very Pale Blue */
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <div class="lg:col-span-7 relative pl-2">
+            
+            <div class="timeline-line h-full absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#1E3A8A] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y1</div>
+                </div>
+                
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩一上：建立製程基礎與 NLP 技術</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：修習院定必修 (Core) 與 RAG 知識庫建置</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold text-[#b91c1c]">院定必修 (四選二)：</span>修習<span class="text-accent">《半導體製程》</span>(3學分)。深入理解 CP/FT 測試在製程中的定位與物理限制，為數位孿生參數提供物理依據。</li>
+                            <li><span class="font-bold text-[#b91c1c]">院定必修：</span>修習<span class="text-accent">《書報討論 (一)》</span>。</li>
+                            <li><span class="font-bold">專業選修 (AI)：</span>修習《自然語言處理》，針對機台 SOP 手冊進行 RAG (檢索增強生成) 的向量資料庫建置。</li>
+                            <li><span class="font-bold">研究進度：</span>完成實習場域機台 Error Code 的資料清洗與分類。</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#b91c1c] text-white text-xs rounded">核心必修</span>
+                            <span class="px-3 py-1 bg-[#1E3A8A] text-white text-xs rounded">半導體製程</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">NLP/RAG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#1E3A8A] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y1</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩一下：深入元件物理與沙盒開發</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：完成必修核心課程 & 數位孿生串接</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold text-[#b91c1c]">院定必修 (四選二)：</span>修習<span class="text-accent">《半導體物理及元件 (一)》</span>(3學分)。掌握晶圓 (Die) 物理特性與探針卡接觸機制，確保測試指令不違反物理極限。</li>
+                            <li><span class="font-bold text-[#b91c1c]">院定必修：</span>修習<span class="text-accent">《書報討論 (二)》</span>。</li>
+                            <li><span class="font-bold">專業選修 (Data)：</span>修習《智慧製造大數據分析》或《系統模擬》，開發「數位孿生沙盒」進行指令預演。</li>
+                            <li><span class="font-bold">研究進度：</span>整合 LLM 轉譯模組與沙盒，完成「原子化界面」v1.0 原型。</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#b91c1c] text-white text-xs rounded">核心必修</span>
+                            <span class="px-3 py-1 bg-[#1E3A8A] text-white text-xs rounded">元件物理</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">數位孿生</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-8 h-8 rounded-full bg-[#E89E41] flex items-center justify-center z-10 shadow-md">
+                        <i class="fas fa-microchip text-white text-xs"></i>
+                    </div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">暑期：系統整合與安全驗證 (POC)</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：驗證「攔截機制」有效性</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-md border-2 border-[#E89E41]">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold">壓力測試：</span>輸入大量歷史「誤操作指令」，驗證數位孿生是否能 100% 成功攔截並回報風險。</li>
+                            <li><span class="font-bold">系統整合：</span>將 LLM 斡旋模組、數位孿生沙盒、原子化界面整合為單一系統。</li>
+                            <li><span class="font-bold">論文提案：</span>完成 Proposal，定義 UPH (每小時產出) 與 Downtime 改善率為主要評估指標。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#1E3A8A] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y2</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩二上：場域實驗與良率分析</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：選修英文授課專業課程 & 產線驗證</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold">專業選修：</span>修習<span class="text-accent">《半導體良率分析》</span>(英語授課)，滿足非英語授課學分限制，並從數據層面證明系統貢獻。</li>
+                            <li><span class="font-bold">A/B Testing：</span>於合作企業產線進行分組實驗（實驗組使用 AI 系統，對照組使用傳統流程）。</li>
+                            <li><span class="font-bold">數據收集：</span>收集技術員操作時間、錯誤率、與機台閒置時間等數據。</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">EMI 課程</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">良率提升</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-4">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-8 h-8 rounded-full bg-[#EF4444] text-white flex items-center justify-center z-10 font-bold text-xs">Y2</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩二下：論文產出與畢業</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：完成學位論文研究與 24 學分門檻</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li>撰寫碩士論文：<br><span class="text-sm text-gray-600">題目：整合大型語言模型斡旋與數位孿生驗證之原子化界面設計—以半導體封測場域為例。</span></li>
+                            <li><span class="font-bold text-[#b91c1c]">學位要求：</span>確認修滿 24 學分 (含6核心+6選修，非英語<6學分) 並通過論文口試。</li>
+                            <li>學術/實務發表：投稿相關研討會或申請企業內部專利。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="lg:col-span-5 space-y-8 pt-2">
+            
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4 pb-2 border-b border-gray-300">學院必修與核心課程規劃</h3>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-red-50 border-l-4 border-red-500 rounded p-4 shadow-sm">
+                        <div class="font-bold text-red-700 text-sm mb-2 flex items-center">
+                            <i class="fas fa-exclamation-circle mr-2"></i>核心必修 (4選2, 共6學分)
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div class="bg-white border border-red-200 rounded p-2">
+                                <div class="font-bold text-gray-800 text-sm">半導體製程</div>
+                                <div class="text-[10px] text-gray-500">碩一上 / 製程理解</div>
+                            </div>
+                            <div class="bg-white border border-red-200 rounded p-2">
+                                <div class="font-bold text-gray-800 text-sm">半導體物理<br>及元件(一)</div>
+                                <div class="text-[10px] text-gray-500">碩一下 / 物理基礎</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 border-l-4 border-gray-500 rounded p-3 shadow-sm flex justify-between items-center">
+                         <div>
+                            <div class="font-bold text-gray-700 text-sm">書報討論</div>
+                            <div class="text-[10px] text-gray-500">必修 / 至少通過兩學期</div>
+                         </div>
+                         <div class="flex gap-1">
+                             <span class="px-2 py-1 bg-gray-200 text-xs rounded">碩一上</span>
+                             <span class="px-2 py-1 bg-gray-200 text-xs rounded">碩一下</span>
+                         </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <div class="bg-white border border-gray-300 rounded p-3 text-center shadow-sm hover:border-accent transition-colors">
+                            <div class="font-bold text-gray-800 text-sm mb-1">自然語言處理<br>(NLP)</div>
+                            <div class="text-xs text-gray-500">選修 / AI 核心</div>
+                        </div>
+                        <div class="bg-white border border-gray-300 rounded p-3 text-center shadow-sm hover:border-accent transition-colors">
+                            <div class="font-bold text-gray-800 text-sm mb-1">智慧製造<br>大數據分析</div>
+                            <div class="text-xs text-gray-500">選修 / 數位孿生</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4 mt-8">研究能力養成權重</h3>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="w-32 text-xs text-gray-600 font-medium">封測製程/機台物理</div>
+                        <div class="flex-1 h-6 bg-gray-100 rounded-r-md rounded-l-md overflow-hidden relative">
+                             <div class="h-full bar-color-1 rounded-r-md" style="width: 90%;"></div>
+                        </div>
+                        <div class="ml-2 text-xs font-bold text-gray-500">90%</div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="w-32 text-xs text-gray-600 font-medium">數位孿生建構</div>
+                        <div class="flex-1 h-6 bg-gray-100 rounded-r-md rounded-l-md overflow-hidden relative">
+                             <div class="h-full bar-color-3 rounded-r-md" style="width: 85%;"></div>
+                        </div>
+                         <div class="ml-2 text-xs font-bold text-gray-500">85%</div>
+                    </div>
+
+                    <div class="flex items-center mb-3">
+                        <div class="w-32 text-xs text-gray-600 font-medium">LLM / RAG 技術</div>
+                        <div class="flex-1 h-6 bg-gray-100 rounded-r-md rounded-l-md overflow-hidden relative">
+                             <div class="h-full bar-color-2 rounded-r-md" style="width: 75%;"></div>
+                        </div>
+                         <div class="ml-2 text-xs font-bold text-gray-500">75%</div>
+                    </div>
+
+                    <div class="flex items-center mb-3">
+                        <div class="w-32 text-xs text-gray-600 font-medium">良率分析與驗證</div>
+                        <div class="flex-1 h-6 bg-gray-100 rounded-r-md rounded-l-md overflow-hidden relative">
+                             <div class="h-full bar-color-4 rounded-r-md" style="width: 70%;"></div>
+                        </div>
+                         <div class="ml-2 text-xs font-bold text-gray-500">70%</div>
+                    </div>
+
+                    <p class="text-[10px] text-gray-500 text-center mt-3 border-t pt-2">* 調整策略：優先精通機台物理特性，確保模擬模型之可信度</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4 mt-4">論文架構心力分配</h3>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center">
+                    <div class="w-48 h-48 relative">
+                        <canvas id="effortChart"></canvas>
+                    </div>
+                    
+                    <div class="w-full mt-6 text-sm text-gray-600 space-y-2">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bar-color-1 mr-2"></span>
+                            <span>數位孿生模型與安全驗證 (45%)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bar-color-3 mr-2"></span>
+                            <span>LLM 斡旋架構與知識庫 (30%)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bar-color-5 mr-2"></span>
+                            <span>場域導入與良率成效分析 (25%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-[#1E3A8A] shadow-sm">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-crosshairs text-[#1E3A8A] mr-2"></i>
+                    <h4 class="font-bold text-gray-800">研究核心目標</h4>
+                </div>
+                <div class="text-sm text-gray-700 space-y-3">
+                    <p><span class="font-bold text-gray-900">符合畢業門檻：</span>完成 24 學分（含半導體物理/製程 6 學分）。</p>
+                    <p><span class="font-bold text-gray-900">軟硬整合：</span>以「製程/元件物理」知識為骨幹，以「LLM」為神經，建構高可信度的測試場域 AI。</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('effortChart').getContext('2d');
+        const effortChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['數位孿生模型與安全驗證', 'LLM 斡旋架構與知識庫', '場域導入與良率成效分析'],
+                datasets: [{
+                    data: [45, 30, 25], // Updated weights
+                    backgroundColor: [
+                        '#1E3A8A', // Dark Blue - Digital Twin
+                        '#60A5FA', // Light Blue - LLM
+                        '#BFDBFE'  // Pale Blue - Validation
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false 
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
