@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台科大資管碩士班學習規劃 Roadmap (修正版)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FAFAFA;
+            color: #333;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            bottom: 0;
+            left: 30px;
+            width: 4px;
+            background-color: #5D5D5D;
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Research Specific Colors */
+        .text-accent { color: #C25E28; } 
+        .bg-accent { background-color: #C25E28; }
+        .border-accent { border-color: #C25E28; }
+        
+        /* Chart Colors */
+        .bar-color-1 { background-color: #2D3748; } 
+        .bar-color-2 { background-color: #C53030; } 
+        .bar-color-3 { background-color: #D69E2E; } 
+        .bar-color-4 { background-color: #718096; } 
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <div class="lg:col-span-7 relative pl-2">
+            
+            <div class="timeline-line h-full absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#5D5D5D] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y1</div>
+                </div>
+                
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩一上：必修奠基與問題定義</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：完成共同必修與 Log 數據探勘</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold text-gray-900">學術研究倫理課程 (必修 0學分)：</span>入學第一年內須修畢，確保論文寫作符合學術規範。</li>
+                            <li><span class="font-bold text-gray-900">資訊管理專題研討(一) (必修 0學分)：</span>透過聽講了解資管領域最新趨勢，構思「原子化界面」的研究利基。</li>
+                            <li><span class="font-bold text-blue-800">資料探勘 (選修)：</span>應用關聯規則分析實習場域的 MES 與維修 Log，找出「SOP 資訊過載」與「操作失誤」的數據關聯，量化研究動機。</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#4A4A4A] text-white text-xs rounded">學術研究倫理</span>
+                            <span class="px-3 py-1 bg-[#4A4A4A] text-white text-xs rounded">資管專題研討(一)</span>
+                            <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">資料探勘</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#5D5D5D] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y1</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩一下：核心技術實作 (LLM & 資安)</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：建構「LLM 斡旋者」與「數位孿生沙盒」</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold text-gray-900">資訊管理專題研討(二) (必修 0學分)：</span>持續修習，並確立論文指導教授。</li>
+                            <li><span class="font-bold text-blue-800">大型語言模型於資安系統之應用 (選修)：</span>[核心關鍵] 學習 RAG 技術建立 SOP 向量知識庫，並利用 Prompt Engineering 讓 LLM 準確轉譯機台指令。</li>
+                            <li><span class="font-bold text-red-800">物聯網應用之資訊安全與風險管理 (選修)：</span>實作「數位孿生驗證機制」。學習如何設計安全的沙盒環境，攔截 LLM 可能產生的幻覺或危險指令。</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                             <span class="px-3 py-1 bg-[#4A4A4A] text-white text-xs rounded">資管專題研討(二)</span>
+                             <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">大型語言模型應用</span>
+                             <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">IoT 資安與風險管理</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-8 h-8 rounded-full bg-[#E89E41] flex items-center justify-center z-10 shadow-md">
+                        <i class="fas fa-hammer text-white text-xs"></i>
+                    </div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩一升碩二 (系統整合)</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：開發「原子化界面」原型並進行模擬測試</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-md border-2 border-[#D6A62E]">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold">前後端整合：</span>整合前端原子化 UI (Vue.js)、中台 LLM 轉譯器 (Python) 與後端數位孿生模擬器。</li>
+                            <li><span class="font-bold">預演沙盒實作：</span>完成「虛擬試錯」功能，確保指令在進入物理機台前已通過驗證。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-10">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-10 h-10 rounded-full border-2 border-[#5D5D5D] bg-white flex items-center justify-center z-10 text-xs font-bold text-gray-600">Y2</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩二上：場域驗證與成效評估</h2>
+                    <p class="text-accent font-bold text-sm mb-4">重點：實驗數據收集與使用者測試</p>
+                    
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li><span class="font-bold text-green-800">軟體工程與管理 (選修)：</span>學習系統維護性設計，確保原子化界面能適應未來 SOP 的變更。</li>
+                            <li><span class="font-bold">實驗執行：</span>進行模擬實驗，收集「LLM 轉譯正確率」與「數位孿生攔截次數」等關鍵指標。</li>
+                            <li><span class="font-bold">使用者測試：</span>評估技術員與主管對於原子化界面的滿意度與資訊理解速度 (NASA-TLX 量表)。</li>
+                        </ul>
+                         <div class="mt-4 flex flex-wrap gap-2">
+                             <span class="px-3 py-1 bg-gray-200 text-gray-700 text-xs rounded">軟體工程與管理</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item flex mb-4">
+                <div class="flex-shrink-0 w-12 flex justify-center pt-1">
+                    <div class="w-8 h-8 rounded-full bg-[#EF4444] text-white flex items-center justify-center z-10 font-bold text-xs">Y2</div>
+                </div>
+                <div class="ml-4 w-full">
+                    <h2 class="text-2xl font-bold text-gray-800">碩二下：論文產出與發表</h2>
+                    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                            <li>完成碩士論文撰寫，驗證「LLM 斡旋者」在半導體測試場域的實務價值。</li>
+                            <li>整理實驗數據，投稿國內外資訊管理或智慧製造相關研討會。</li>
+                            <li>完成論文口試與離校手續。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="lg:col-span-5 space-y-8 pt-2">
+            
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4 pb-2 border-b border-gray-300">針對研究計畫之關鍵選課</h3>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-3 shadow-sm">
+                        <div class="flex justify-between">
+                            <span class="font-bold text-gray-800">大型語言模型於資安系統之應用</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded border">碩一下</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">對應：RAG 知識庫建置、指令語意轉譯</p>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-600 p-3 shadow-sm">
+                        <div class="flex justify-between">
+                            <span class="font-bold text-gray-800">物聯網應用之資訊安全與風險管理</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded border">碩一下</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">對應：數位孿生安全驗證、異常攔截機制</p>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-600 p-3 shadow-sm">
+                        <div class="flex justify-between">
+                            <span class="font-bold text-gray-800">資料探勘</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded border">碩一上</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">對應：分析 Log 數據、識別操作失誤模式</p>
+                    </div>
+
+                    <div class="bg-gray-50 border-l-4 border-gray-600 p-3 shadow-sm">
+                        <div class="flex justify-between">
+                            <span class="font-bold text-gray-800">學術研究倫理課程 (必修)</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded border">碩一</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">對應：碩士畢業門檻要求</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4 mt-8">研究能力權重分配</h3>
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <div class="w-24 text-xs text-gray-600 font-medium">LLM/NLP</div>
+                        <div class="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden">
+                             <div class="h-full bar-color-1" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-24 text-xs text-gray-600 font-medium">IoT/數位孿生</div>
+                        <div class="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden">
+                             <div class="h-full bar-color-2" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-24 text-xs text-gray-600 font-medium">界面設計 (UI)</div>
+                        <div class="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden">
+                             <div class="h-full bar-color-3" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-24 text-xs text-gray-600 font-medium">研究方法論</div>
+                        <div class="flex-1 h-5 bg-gray-100 rounded-full overflow-hidden">
+                             <div class="h-full bar-color-4" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#F3EFE9] p-5 rounded-lg border-l-4 border-[#4A4238] shadow-sm mt-6">
+                <div class="flex items-center mb-2">
+                    <i class="fas fa-check-circle text-[#4A4238] mr-2"></i>
+                    <h4 class="font-bold text-gray-800">課程與研究契合度</h4>
+                </div>
+                <div class="text-sm text-gray-700 space-y-3">
+                    <p>修正後規劃：<span class="font-bold">碩一</span>專注於「學術倫理」與「專題研討」必修，同時利用「資料探勘」分析產線數據；<span class="font-bold">碩一下</span>則集中火力於「LLM」與「IoT 資安」選修，完成系統核心開發。這樣的安排符合修業規定，也能最大化研究產出。</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
