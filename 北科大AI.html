@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北科大 AI 科技學程 (C73) - 碩士研究規劃 (Fixed Layout)</title>
+    <title>北科大 AI 科技學程 (C73) - 碩士研究規劃 (Centered)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -16,8 +16,6 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #F8F9FA;
             color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         /* --- Fixed Timeline CSS --- */
@@ -75,146 +73,149 @@
         ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
     </style>
 </head>
-<body class="p-6 md:p-10 min-h-screen flex flex-col">
+<body class="bg-gray-50 min-h-screen w-full flex flex-col items-center py-10 px-4 md:px-8">
 
-    <header class="flex justify-between items-end border-b border-gray-300 pb-4 mb-6 shrink-0">
-        <div>
-            <h1 class="text-2xl font-bold text-gray-800">碩士修業暨研究規劃</h1>
-            <p class="text-sm text-gray-600 mt-1">北科大 AI 科技碩士學位學程 (C73)</p>
-        </div>
-        <div class="text-right hidden sm:block">
-            <div class="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded inline-block mb-1">研究題目</div>
-            <div class="text-sm font-bold text-brand">整合 LLM 斡旋與數位孿生驗證之原子化界面設計</div>
-        </div>
-    </header>
+    <div class="w-full max-w-6xl mx-auto bg-transparent">
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 flex-grow">
+        <header class="flex justify-between items-end border-b border-gray-300 pb-4 mb-8 shrink-0">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">碩士修業暨研究規劃</h1>
+                <p class="text-sm text-gray-600 mt-1">北科大 AI 科技碩士學位學程 (C73)</p>
+            </div>
+            <div class="text-right hidden sm:block">
+                <div class="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded inline-block mb-1">研究題目</div>
+                <div class="text-sm font-bold text-brand">整合 LLM 斡旋與數位孿生驗證之原子化界面設計</div>
+            </div>
+        </header>
 
-        <div class="lg:col-span-7 timeline-container">
-            <div class="timeline-line"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="flex items-center">
-                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-0.5 rounded mr-2">Y1 上</span>
-                    <h3 class="text-base font-bold text-gray-800">基礎建置：資料探勘與模型架構</h3>
+            <div class="lg:col-span-7 timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-center">
+                        <span class="text-xs font-bold bg-gray-700 text-white px-2 py-0.5 rounded mr-2">Y1 上</span>
+                        <h3 class="text-base font-bold text-gray-800">基礎建置：資料探勘與模型架構</h3>
+                    </div>
+                    <div class="card-compact">
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>● <strong class="text-brand">深度學習 (3)：</strong>掌握 Transformer 與 Attention 機制，建立 LLM 基石。</li>
+                            <li>● <strong class="text-brand">大數據技術與管理 (3)：</strong>處理 MES Log 清洗 (ETL)，建置 RAG 知識庫。</li>
+                            <li>● <strong>專題討論 (1)：</strong>確立「原子化界面」設計規範與文獻回顧。</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-compact">
-                    <ul class="text-sm space-y-2 text-gray-700">
-                        <li>● <strong class="text-brand">深度學習 (3)：</strong>掌握 Transformer 與 Attention 機制，建立 LLM 基石。</li>
-                        <li>● <strong class="text-brand">大數據技術與管理 (3)：</strong>處理 MES Log 清洗 (ETL)，建置 RAG 知識庫。</li>
-                        <li>● <strong>專題討論 (1)：</strong>確立「原子化界面」設計規範與文獻回顧。</li>
-                    </ul>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-center">
+                        <span class="text-xs font-bold bg-gray-700 text-white px-2 py-0.5 rounded mr-2">Y1 下</span>
+                        <h3 class="text-base font-bold text-gray-800">原型開發：數位孿生與介面</h3>
+                    </div>
+                    <div class="card-compact">
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>● <strong class="text-brand">物聯網與感測網路 (3)：</strong>串接 Sensor 數據，打造數位孿生驗證沙盒。</li>
+                            <li>● <strong class="text-brand">社群媒體與對話機器人 (3)：</strong>開發 LLM Agent，供技術員查詢 SOP。</li>
+                            <li>● <strong class="text-brand">資料可視化 (3)：</strong>實作原子化界面，設計主管決策儀表板。</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-orange-400 border-orange-400"></div>
+                    <div class="flex items-center">
+                        <span class="text-xs font-bold bg-orange-500 text-white px-2 py-0.5 rounded mr-2">暑期</span>
+                        <h3 class="text-base font-bold text-gray-800">系統整合測試</h3>
+                    </div>
+                    <div class="card-compact bg-orange-50 border-orange-200">
+                        <p class="text-xs text-gray-800 font-medium leading-relaxed">
+                            目標：串接 NLP 模組與 IoT 數據流，模擬邊界案例進行壓力測試，並完成論文 Proposal 撰寫。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-center">
+                        <span class="text-xs font-bold bg-brand text-white px-2 py-0.5 rounded mr-2">Y2 上</span>
+                        <h3 class="text-base font-bold text-gray-800">場域實證：演算法優化</h3>
+                    </div>
+                    <div class="card-compact">
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>● <strong class="text-brand">自然語言處理 (3)：</strong>Fine-tuning 模型以適應半導體專有名詞。</li>
+                            <li>● <strong class="text-brand">深度學習應用開發實務 (3)：</strong>將異常偵測模型容器化並部署至邊緣端。</li>
+                            <li>● <strong>碩士論文 (3)：</strong>於產線進行 A/B Test，收集實驗數據。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="flex items-center">
+                        <span class="text-xs font-bold bg-brand text-white px-2 py-0.5 rounded mr-2">Y2 下</span>
+                        <h3 class="text-base font-bold text-gray-800">成果驗收：系統總整</h3>
+                    </div>
+                    <div class="card-compact">
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li>● <strong class="text-brand">大數據與人工智能應用系統設計 (3)：</strong>完成全系統 (界面-LLM-資料庫) 整合。</li>
+                            <li>● <strong>碩士論文 (3)：</strong>論證管理失效之改善成效，完成學位口試。</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="flex items-center">
-                    <span class="text-xs font-bold bg-gray-700 text-white px-2 py-0.5 rounded mr-2">Y1 下</span>
-                    <h3 class="text-base font-bold text-gray-800">原型開發：數位孿生與介面</h3>
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+                
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="bg-gray-100 px-4 py-2 border-b border-gray-200">
+                        <h4 class="font-bold text-sm text-gray-700">關鍵選修檢核 (Checklist)</h4>
+                    </div>
+                    <table class="w-full text-xs">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr><td class="p-2 pl-4">深度學習</td><td class="p-2 text-right pr-4 text-gray-500">1-1</td></tr>
+                            <tr><td class="p-2 pl-4">大數據技術與管理</td><td class="p-2 text-right pr-4 text-gray-500">1-1</td></tr>
+                            <tr><td class="p-2 pl-4">物聯網與感測網路</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
+                            <tr><td class="p-2 pl-4">對話機器人系統設計</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
+                            <tr><td class="p-2 pl-4">資料可視化</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
+                            <tr><td class="p-2 pl-4">自然語言處理</td><td class="p-2 text-right pr-4 text-gray-500">2-1</td></tr>
+                            <tr class="bg-orange-50"><td class="p-2 pl-4 font-bold text-brand">深度學習應用開發實務</td><td class="p-2 text-right pr-4 font-bold text-brand">2-1</td></tr>
+                            <tr class="bg-orange-50"><td class="p-2 pl-4 font-bold text-brand">大數據與AI系統設計</td><td class="p-2 text-right pr-4 font-bold text-brand">2-2</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="card-compact">
-                    <ul class="text-sm space-y-2 text-gray-700">
-                        <li>● <strong class="text-brand">物聯網與感測網路 (3)：</strong>串接 Sensor 數據，打造數位孿生驗證沙盒。</li>
-                        <li>● <strong class="text-brand">社群媒體與對話機器人 (3)：</strong>開發 LLM Agent，供技術員查詢 SOP。</li>
-                        <li>● <strong class="text-brand">資料可視化 (3)：</strong>實作原子化界面，設計主管決策儀表板。</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="timeline-item">
-                <div class="timeline-dot bg-orange-400 border-orange-400"></div>
-                <div class="flex items-center">
-                    <span class="text-xs font-bold bg-orange-500 text-white px-2 py-0.5 rounded mr-2">暑期</span>
-                    <h3 class="text-base font-bold text-gray-800">系統整合測試</h3>
+                <div class="bg-white rounded-lg border border-gray-200 p-4 shadow-sm flex-grow flex flex-col justify-center">
+                    <h4 class="font-bold text-sm text-gray-700 text-center mb-2">研究技能權重</h4>
+                    <div class="relative h-32 w-full">
+                        <canvas id="compactSkillChart"></canvas>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#8B4513] mr-2"></span> LLM 語意斡旋</span>
+                            <span class="font-bold">45%</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#C25E28] mr-2"></span> IoT 數位孿生</span>
+                            <span class="font-bold">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#D6A62E] mr-2"></span> 系統整合</span>
+                            <span class="font-bold">25%</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-compact bg-orange-50 border-orange-200">
-                    <p class="text-xs text-gray-800 font-medium leading-relaxed">
-                        目標：串接 NLP 模組與 IoT 數據流，模擬邊界案例進行壓力測試，並完成論文 Proposal 撰寫。
+
+                <div class="bg-gray-800 text-white p-4 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-xs mb-1 text-orange-400 uppercase">Core Value</h4>
+                    <p class="text-xs leading-relaxed opacity-90">
+                        本計畫透過系統性修課，構建具備<strong>「數位孿生驗證機制的 LLM 斡旋系統」</strong>，解決半導體產線之管理失效問題。
                     </p>
                 </div>
+
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="flex items-center">
-                    <span class="text-xs font-bold bg-brand text-white px-2 py-0.5 rounded mr-2">Y2 上</span>
-                    <h3 class="text-base font-bold text-gray-800">場域實證：演算法優化</h3>
-                </div>
-                <div class="card-compact">
-                    <ul class="text-sm space-y-2 text-gray-700">
-                        <li>● <strong class="text-brand">自然語言處理 (3)：</strong>Fine-tuning 模型以適應半導體專有名詞。</li>
-                        <li>● <strong class="text-brand">深度學習應用開發實務 (3)：</strong>將異常偵測模型容器化並部署至邊緣端。</li>
-                        <li>● <strong>碩士論文 (3)：</strong>於產線進行 A/B Test，收集實驗數據。</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="flex items-center">
-                    <span class="text-xs font-bold bg-brand text-white px-2 py-0.5 rounded mr-2">Y2 下</span>
-                    <h3 class="text-base font-bold text-gray-800">成果驗收：系統總整</h3>
-                </div>
-                <div class="card-compact">
-                    <ul class="text-sm space-y-2 text-gray-700">
-                        <li>● <strong class="text-brand">大數據與人工智能應用系統設計 (3)：</strong>完成全系統 (界面-LLM-資料庫) 整合。</li>
-                        <li>● <strong>碩士論文 (3)：</strong>論證管理失效之改善成效，完成學位口試。</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="lg:col-span-5 flex flex-col space-y-6">
-            
-            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-                <div class="bg-gray-100 px-4 py-2 border-b border-gray-200">
-                    <h4 class="font-bold text-sm text-gray-700">關鍵選修檢核 (Checklist)</h4>
-                </div>
-                <table class="w-full text-xs">
-                    <tbody class="divide-y divide-gray-100">
-                        <tr><td class="p-2 pl-4">深度學習</td><td class="p-2 text-right pr-4 text-gray-500">1-1</td></tr>
-                        <tr><td class="p-2 pl-4">大數據技術與管理</td><td class="p-2 text-right pr-4 text-gray-500">1-1</td></tr>
-                        <tr><td class="p-2 pl-4">物聯網與感測網路</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
-                        <tr><td class="p-2 pl-4">對話機器人系統設計</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
-                        <tr><td class="p-2 pl-4">資料可視化</td><td class="p-2 text-right pr-4 text-gray-500">1-2</td></tr>
-                        <tr><td class="p-2 pl-4">自然語言處理</td><td class="p-2 text-right pr-4 text-gray-500">2-1</td></tr>
-                        <tr class="bg-orange-50"><td class="p-2 pl-4 font-bold text-brand">深度學習應用開發實務</td><td class="p-2 text-right pr-4 font-bold text-brand">2-1</td></tr>
-                        <tr class="bg-orange-50"><td class="p-2 pl-4 font-bold text-brand">大數據與AI系統設計</td><td class="p-2 text-right pr-4 font-bold text-brand">2-2</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="bg-white rounded-lg border border-gray-200 p-4 shadow-sm flex-grow flex flex-col justify-center">
-                <h4 class="font-bold text-sm text-gray-700 text-center mb-2">研究技能權重</h4>
-                <div class="relative h-32 w-full">
-                    <canvas id="compactSkillChart"></canvas>
-                </div>
-                <div class="mt-4 space-y-2">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#8B4513] mr-2"></span> LLM 語意斡旋</span>
-                        <span class="font-bold">45%</span>
-                    </div>
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#C25E28] mr-2"></span> IoT 數位孿生</span>
-                        <span class="font-bold">30%</span>
-                    </div>
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-[#D6A62E] mr-2"></span> 系統整合</span>
-                        <span class="font-bold">25%</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-gray-800 text-white p-4 rounded-lg shadow-sm">
-                <h4 class="font-bold text-xs mb-1 text-orange-400 uppercase">Core Value</h4>
-                <p class="text-xs leading-relaxed opacity-90">
-                    本計畫透過系統性修課，構建具備<strong>「數位孿生驗證機制的 LLM 斡旋系統」</strong>，解決半導體產線之管理失效問題。
-                </p>
-            </div>
-
         </div>
     </div>
 
