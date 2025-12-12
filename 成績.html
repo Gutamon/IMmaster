@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學業成就與專業發展 - 奶茶咖啡色系版 (深色線條)</title>
+    <style>
+        :root {
+            /* --- 奶茶與咖啡全新配色盤 --- */
+            
+            /* 背景色調 (維持不變) */
+            --bg-outer: #E0D0C0;       /* 最外層背景：濃郁奶茶 */
+            --bg-card: #FFFBF5;        /* 卡片主體背景：絲滑牛奶白 */
+            --bg-accent: #F2E6D8;      /* 強調區塊/摘要/列表背景：淺奶茶色 */
+
+            /* 文字與線條色調 (咖啡色系 - 修改線條為深色) */
+            --text-main: #3E2723;      /* 主要文字：深濃縮咖啡 */
+            --text-muted: #3E2723;     /* 次要文字/小標：中焙咖啡 */
+            
+            /* [修改] 將邊框顏色改為深咖啡色 (與主要文字同色) */
+            --border-color: #3E2723;   /* 邊框/分隔線：深濃縮咖啡 */
+            
+            /* 圖表專用色 */
+            /* [修改] 確保圖表主線條也是最深的咖啡色 */
+            --chart-line-color: #3E2723; /* 圖表主線條：深濃縮咖啡 */
+            /* [修改] 加深圖表背景網格線，使其更明顯但仍比主線條淺 */
+            --chart-grid-color: #8D6E63; /* 圖表背景網格線：中深焙咖啡 */
+
+            /* 重點跳色 (維持不變) */
+            --accent-gold: #3E2723;    /* 焦糖色 (成績A+/標題/強調邊框) */
+            --accent-green: #558B2F;   /* 抹茶綠 (成績B) */
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+            background-color: var(--bg-outer);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .dashboard {
+            background-color: var(--bg-card);
+            width: 100%;
+            max-width: 1200px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
+            /* 使用新的深色邊框變數 */
+            border: 2px solid var(--border-color);
+        }
+
+        /* 標題區域 */
+        .main-header {
+            text-align: center;
+            margin-bottom: 30px;
+            /* 使用新的深色邊框變數 */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .main-header h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            color: var(--text-main);
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        /* 網格佈局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 通用卡片樣式 */
+        .column {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 20px;
+            /* 使用新的深色邊框變數 */
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-header {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            /* 使用新的深色邊框變數 */
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* 左欄：成績表現 */
+        .chart-container {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .key-point {
+            background-color: var(--bg-accent);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            /* 這裡維持焦糖色作為強調，不視為一般線條 */
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .key-point h4 {
+            margin: 0 0 5px 0;
+            color: var(--accent-gold);
+        }
+
+        .key-point p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* 中欄：課程列表 */
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .course-col {
+            text-align: center;
+        }
+
+        .icon-header {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .sub-title {
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-accent);
+            margin-bottom: 8px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid transparent; /* 預留邊框空間 */
+        }
+        /* hover 效果使用新的深色邊框 */
+        .course-item:hover {
+             border-color: var(--border-color);
+        }
+
+        .grade {
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+        .grade-b {
+            color: var(--accent-green);
+        }
+
+        .summary-box {
+            margin-top: auto;
+            background-color: var(--bg-accent);
+            padding: 15px;
+            border-radius: 8px;
+            /* 使用新的深色邊框變數 */
+            border: 1px solid var(--border-color);
+        }
+
+        /* 右欄：AI展望 */
+        .flow-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 25px;
+            background: var(--bg-accent);
+            padding: 15px;
+            border-radius: 10px;
+            /* 使用新的深色邊框變數 */
+            border: 1px solid var(--border-color);
+        }
+
+        .flow-item {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .flow-icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+        .arrow {
+            font-size: 1.5rem;
+            /* [修改] 將箭頭顏色改為深色線條顏色 */
+            color: var(--border-color);
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .ai-item {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .ai-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+
+        .footer-info {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            /* 使用新的深色邊框變數 */
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            color: var(--text-muted);
+        }
+        
+        .uni-logo {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-card);
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        /* SVG Chart Styles - 更新為更深的咖啡色系 */
+        svg {
+            width: 100%;
+            height: 150px;
+            overflow: visible;
+        }
+        /* 網格線使用加深後的 grid color */
+        .chart-bg-line { stroke: var(--chart-grid-color); stroke-width: 1; stroke-dasharray: 4; }
+        /* 資料線使用加深後的 line color */
+        .chart-path { fill: none; stroke: var(--chart-line-color); stroke-width: 3; }
+        .chart-dot { fill: var(--bg-card); stroke: var(--accent-gold); stroke-width: 3; }
+        .chart-label { fill: var(--text-main); font-size: 10px; font-weight: bold;}
+        .chart-axis { fill: var(--text-muted); font-size: 9px; }
+
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <div class="main-header">
+        <h1>學業成就與專業發展：理論、實作與 AI 浪潮的融合</h1>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="column">
+            <div class="col-header">成績表現</div>
+            
+            <div class="chart-container">
+                <div class="chart-title">GPA 表現：穩定成長</div>
+                <svg viewBox="0 0 300 150">
+                    <line x1="20" y1="30" x2="290" y2="30" class="chart-bg-line" />
+                    <line x1="20" y1="70" x2="290" y2="70" class="chart-bg-line" />
+                    <line x1="20" y1="110" x2="290" y2="110" class="chart-bg-line" />
+                    
+                    <text x="0" y="30" class="chart-axis">4.3</text>
+                    <text x="0" y="70" class="chart-axis">3.9</text>
+                    <text x="0" y="110" class="chart-axis">3.5</text>
+
+                    <polyline points="40,80 85,95 130,75 175,98 220,65 265,35" class="chart-path" />
+                    
+                    <circle cx="40" cy="80" r="4" class="chart-dot" /><text x="30" y="70" class="chart-label">3.86</text>
+                    <circle cx="85" cy="95" r="4" class="chart-dot" /><text x="75" y="115" class="chart-label">3.74</text>
+                    <circle cx="130" cy="75" r="4" class="chart-dot" /><text x="120" y="65" class="chart-label">3.90</text>
+                    <circle cx="175" cy="98" r="4" class="chart-dot" /><text x="165" y="118" class="chart-label">3.67</text>
+                    <circle cx="220" cy="65" r="4" class="chart-dot" /><text x="210" y="55" class="chart-label">3.98</text>
+                    <circle cx="265" cy="35" r="4" class="chart-dot" /><text x="255" y="25" class="chart-label">4.27</text>
+                    
+                    <text x="35" y="140" class="chart-axis">111(上)</text>
+                    <text x="250" y="140" class="chart-axis">113(下)</text>
+                </svg>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Point</h4>
+                <p>• 成績漸入佳境，展現學習成果。</p>
+            </div>
+
+            <div class="chart-container" style="margin-top: 30px;">
+                <div class="chart-title">班級排名：持續優化</div>
+                <svg viewBox="0 0 300 150">
+                    <line x1="20" y1="20" x2="290" y2="20" class="chart-bg-line" /> <line x1="20" y1="140" x2="290" y2="140" class="chart-bg-line" /> <text x="0" y="20" class="chart-axis">0%</text>
+                    <text x="0" y="140" class="chart-axis">40%</text>
+
+                    <polyline points="40,45 85,60 130,55 175,70 220,125 265,50" class="chart-path" />
+
+                    <circle cx="40" cy="45" r="4" class="chart-dot" />
+                    <text x="30" y="35" class="chart-label">6.90%</text>
+
+                    <circle cx="85" cy="60" r="4" class="chart-dot" />
+                    <text x="75" y="50" class="chart-label">12.30%</text>
+                    
+                    <circle cx="130" cy="55" r="4" class="chart-dot" />
+                    <text x="120" y="45" class="chart-label">10.00%</text>
+
+                    <circle cx="175" cy="70" r="4" class="chart-dot" />
+                    <text x="165" y="60" class="chart-label">14.90%</text>
+
+                    <circle cx="220" cy="125" r="4" class="chart-dot" />
+                    <text x="200" y="145" class="chart-label">30.60%</text>
+
+                    <circle cx="265" cy="50" r="4" class="chart-dot" />
+                    <text x="255" y="40" class="chart-label">8.30%</text>
+
+                      <text x="35" y="155" class="chart-axis">111(上)</text>
+                      <text x="250" y="155" class="chart-axis">113(下)</text>
+                </svg>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Point</h4>
+                <p>面對挑戰，不輕言放棄，排名持續進步。</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-header">課程亮點與作品</div>
+            
+            <div class="course-grid">
+                <div class="course-col">
+                    <span class="icon-header">📖</span>
+                    <span class="sub-title">理論素養<br>Theory</span>
+                    
+                    <div class="course-item">管理學 <span class="grade">A+</span></div>
+                    <div class="course-item">資管導論 <span class="grade">A+</span></div>
+                    <div class="course-item">計算機概論 <span class="grade">A+</span></div>
+                    <div class="course-item">資料結構 <span class="grade">A</span></div>
+                    <div class="course-item">應用統計學 <span class="grade">A+</span></div>
+                    <div class="course-item">系統分析 <span class="grade">A+</span></div>
+                </div>
+
+                <div class="course-col">
+                    <span class="icon-header">💻</span>
+                    <span class="sub-title">實作開發<br>Practice</span>
+                    
+                    <div class="course-item">C#.NET <span class="grade">A</span></div>
+                    <div class="course-item">網站後端 <span class="grade">A</span></div>
+                    <div class="course-item">專題(一) <span class="grade">A+</span></div>
+                    <div class="course-item">程式實習 <span class="grade">A+</span></div>
+                    <div class="course-item">雲端計算 <span class="grade">A+</span></div>
+                    <div class="course-item">Python <span class="grade">A+</span></div>
+                    <div class="course-item">網頁設計 <span class="grade">A+</span></div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h4 style="margin:0 0 5px 0; color:var(--accent-gold);">Summary</h4>
+                <p style="margin:0; font-size: 0.9rem;">理論與實作並進，累積多元作品，體現學習價值。</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-header">未來展望與 AI 底氣</div>
+
+            <div class="flow-chart">
+                <div class="flow-item">
+                    <div class="flow-icon">☁️</div>
+                    <div>AI 雲端</div>
+                </div>
+                <div class="arrow">&rarr;</div>
+                <div class="flow-item">
+                    <div class="flow-icon">🗄️</div>
+                    <div>數據</div>
+                </div>
+                <div class="arrow">&rarr;</div>
+                <div class="flow-item">
+                    <div class="flow-icon">🖥️</div>
+                    <div>應用</div>
+                </div>
+            </div>
+
+            <div style="text-align:center; font-weight:bold; margin-bottom:10px; color:var(--text-muted);">AI 課程</div>
+            
+            <div class="ai-grid">
+                <div class="ai-item">
+                    <span class="ai-icon">🧠</span>
+                    初階AI<br>
+                    <span class="grade grade-b">B</span>
+                </div>
+                <div class="ai-item">
+                    <span class="ai-icon">⚙️</span>
+                    進階AI<br>
+                    <span class="grade">A</span>
+                </div>
+                <div class="ai-item">
+                    <span class="ai-icon">🖐️</span>
+                    AI技術<br>
+                    <span class="grade grade-b">B</span>
+                </div>
+                <div class="ai-item">
+                    <span class="ai-icon">☁️</span>
+                    雲端計算<br>
+                    <span class="grade">A+</span>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Point</h4>
+                <ul style="margin:0; padding-left:20px; font-size:0.9rem; line-height:1.5;">
+                    <li>AI 為未來科技發展基礎，掌握核心技能。</li>
+                    <li>積極認識人工智慧，從文件整理到 AI 代理人應用。</li>
+                    <li>練就跟隨 AI 浪潮底氣，創造商業價值與優勢。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
